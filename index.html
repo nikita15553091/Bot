@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кулинарный Telegram-бот — @nikita_recipes_2026_bot</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background-color: #101010; 
+            color: #F1F0EC; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Шапка сайта */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 40px;
+            border-bottom: 1px solid #1c1c1c;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; color: #a1a1aa; }
+        .logo span { color: #FFFFFF; }
+
+        /* Главный экран (Hero Секция) */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            max-width: 800px;
+            color: #FFFFFF;
+        }
+        
+        .hero-text {
+            color: #a1a1aa;
+            font-size: 18px;
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        /* Секция возможностей (Фичи) */
+        .features {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 48px;
+            letter-spacing: -0.5px;
+            color: #FFFFFF;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .card {
+            background-color: #171717;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 32px;
+            transition: border-color 0.3s;
+        }
+        .card:hover {
+            border-color: #333;
+        }
+        .card .icon {
+            font-size: 28px;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+        .card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #FFFFFF;
+        }
+        .card p {
+            font-size: 14px;
+            color: #8e8e93;
+            line-height: 1.6;
+        }
+
+        /* Секция призыва к действию (CTA) */
+        .cta {
+            background-color: #171717;
+            border: 1px solid #222;
+            max-width: 1060px;
+            margin: 60px auto 100px auto;
+            padding: 60px 40px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .cta h2 { font-size: 32px; font-weight: 700; margin-bottom: 12px; color: #FFFFFF; }
+        .cta p { color: #a1a1aa; margin-bottom: 32px; font-size: 15px; }
+
+        .main-btn {
+            display: inline-block;
+            background-color: #262626;
+            color: #FFFFFF;
+            border: 1px solid #333;
+            padding: 16px 36px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .main-btn:hover {
+            background-color: #FFFFFF;
+            color: #101010;
+            border-color: #FFFFFF;
+        }
+
+        /* Подвал */
+        footer {
+            border-top: 1px solid #1c1c1c;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 32px; }
+            .hero-text { font-size: 15px; }
+            header { padding: 20px; }
+            .cta { padding: 40px 20px; }
+            .cta h2 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Навигация -->
+    <header>
+        <div class="logo">NIKITA<span>.RECIPES</span></div>
+    </header>
+
+    <!-- Главный экран -->
+    <section class="hero">
+        <h1>Умный помощник на кухне в вашем Telegram</h1>
+        <p class="hero-text">Больше не нужно думать, что приготовить. Наш бот подберёт идеальный рецепт за секунду, структурирует ингредиенты и сохранит любимые блюда.</p>
+    </section>
+
+    <!-- Что умеет бот -->
+    <section class="features">
+        <h2 class="section-title">Что умеет этот бот?</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">🥗</div>
+                <h3>Фильтрация по категориям</h3>
+                <p>Быстрый поиск блюд по разделам: завтраки, супы, горячее, десерты или легкие закуски.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🔍</div>
+                <h3>Мгновенный поиск</h3>
+                <p>Находите рецепты по названию или по списку продуктов, которые уже лежат у вас в холодильнике.</p>
+            </div>
+            <div class="card">
+                <div class="icon">⭐️</div>
+                <h3>Личное избранное</h3>
+                <p>Добавляйте понравившиеся кулинарные инструкции в личный список, чтобы они всегда были под рукой.</p>
+            </div>
+            <div class="card">
+                <div class="icon">⚙️</div>
+                <h3>Удобное управление</h3>
+                <p>Гибкие функции добавления новых кулинарных идей, редактирования состава и удаления прямо внутри чата.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Блок призыва -->
+    <section class="cta">
+        <h2>Попробуйте прямо сейчас</h2>
+        <p>Бесплатно, без регистраций и сложных интерфейсов. Всё работает внутри привычного мессенджера.</p>
+        <a href="https://t.me/nikita_recipes_2026_bot" target="_blank" class="main-btn">ОТКРЫТЬ БОТА</a>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <p>&copy; 2026 Nikita Recipes Bot. Проект разработан для удобного поиска кулинарных рецептов.</p>
+    </footer>
+
+</body>
+</html>
