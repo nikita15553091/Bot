@@ -1,9 +1,9 @@
 							 
 			ЗАПУСК БОТА
 
-  	1     cd путь к папке
-  	2     py -m pip install -r requirements.txt
-  	3     py bot.py - старт бота
+  		1     cd путь к папке
+  		2     py -m pip install -r requirements.txt
+  		3     py bot.py - старт бота
 		4     Ctrl + C   - остановка бота
 
 
