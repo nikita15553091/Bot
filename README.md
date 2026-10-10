@@ -24,7 +24,8 @@
 		telegram_recipe_bot
 		├── bot.py
 		├── requirements.txt
-		└── recipes.db
+		├── recipes.db
+		└── ...
 
 			База данных
 
